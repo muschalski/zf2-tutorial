@@ -1,0 +1,14 @@
+<h2> Feed de Noticias G1</h2>
+<p>site http://g1.globo.com </p>
+<?php
+	$feedsNoticias = $this->feed->item;
+?>
+<ul>
+		<?php foreach ($feedsNoticias as $feeds) {?>
+			<li><?php 
+					echo "<strong>Data: </strong>". $feeds->pubDate ."<br>";
+					echo "<strong>Link: </strong> <a href='".$feeds->link."' target='_blank' title='".$feeds->title."'>" .$feeds->title ." </a> <br>"; 
+					echo "<strong> Noticia: </strong> <p>".$feeds->description ."</p><hr>";
+			?> </li>
+		<?php } ?>
+</ul>
